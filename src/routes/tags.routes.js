@@ -6,6 +6,8 @@ router
 
   .get("/id/:id", tagController.getById)
 
+  .get("/name/:name", tagController.getByName)
+
   .post("/", tagController.save)
 
 module.exports = router;

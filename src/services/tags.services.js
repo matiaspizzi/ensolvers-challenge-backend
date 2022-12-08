@@ -9,6 +9,10 @@ class TagService {
     return await tagDAO.getById(id);
   }
 
+  async getByName(name) {
+    return await tagDAO.getByName(name);
+  }
+
   async save(obj) {
     return await tagDAO.save(obj);
   }

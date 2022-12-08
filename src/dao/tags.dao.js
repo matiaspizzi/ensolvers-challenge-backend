@@ -13,9 +13,14 @@ class TagController {
       .withGraphFetched('notes')
   }
 
+  async getByName(name) {
+    return await Tag.query()
+      .where('name', name) 
+      .withGraphFetched('notes')
+  }
+
   async save(obj) {
     const found = await this.getByName(obj.name)
-    console.log(found[0])
     if (found[0]) { return found[0] }
     return await Tag.query().insert(obj)
   }

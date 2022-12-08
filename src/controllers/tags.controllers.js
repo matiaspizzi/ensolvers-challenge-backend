@@ -12,6 +12,16 @@ class TagController {
     }
   }
 
+  async getByName(req, res) {
+    try {
+      const tag = await tagService.getByName(req.params.name);
+      res.json(tag);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+  }
+
   async getAll(_req, res) {
     try {
       const tags = await tagService.getAll();
