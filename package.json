@@ -1,0 +1,29 @@
+{
+  "name": "ensolvers-back",
+  "version": "1.0.0",
+  "description": "Back Ensolvers Challenge",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.js",
+    "migrate_down": "npx knex migrate:down --knexfile src/db/knexfile.js",
+    "forever": "forever src/server.js",
+    "start": "node src/server.js"
+  },
+  "author": "Matias Pizzi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "forever": "^4.0.3",
+    "knex": "^2.2.0",
+    "mysql": "^2.18.1",
+    "objection": "^3.0.1",
+    "sqlite3": "^5.1.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19"
+  }
+}
